@@ -5,17 +5,12 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
+	"slices"
+	"strings"
 )
 
-func LoadJsonFromFile(json_file string) string {
-	// plan, _ := ioutil.ReadFile(json_file)
-	// var data interface{}
-	// err := json.Unmarshal(plan, &data)
-	// if err != nil {
-	// 	fmt.Println(err)
-	// 	return "{}"
-	// }
-	// return data
+func LoadOperations(json_file string) []Operation {
+	var results []Operation
 	// Open our jsonFile
 	jsonFile, err := os.Open(json_file)
 	// if we os.Open returns an error then handle it
@@ -32,10 +27,24 @@ func LoadJsonFromFile(json_file string) string {
 
 	var root = result["tests"].([]any)[0].(map[string]interface{})
 	var commands = root["commands"].([]any)
-	var command = commands[0].(map[string]interface{})
-	fmt.Println(command["command"])
-	fmt.Println(command["target"])
-	fmt.Println(command["id"])
 
-	return "{}"
+	for i, _ := range commands {
+		var command = commands[i].(map[string]interface{})
+
+		var oper Operation
+		oper.Action = command["command"].(string)
+
+		methods := []string{"click", "type"}
+		if slices.Contains(methods, oper.Action) {
+			content := strings.Split(command["target"].(string), "=")
+			oper.Target = content[0]
+			oper.Tag = content[1]
+			oper.Value = command["value"].(string)
+
+			// fmt.Println(oper)
+			results = append(results, oper)
+		}
+	}
+
+	return results
 }

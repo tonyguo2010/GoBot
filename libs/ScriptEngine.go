@@ -19,6 +19,6 @@ func Login() {
 }
 
 func Handle(driver selenium.WebDriver) {
-	operations := LoadJsonFromFile("bns.json")
+	operations := LoadOperations("bns.json")
 	fmt.Println(operations)
 }
