@@ -34,11 +34,20 @@ func LoadOperations(json_file string) []Operation {
 		var oper Operation
 		oper.Action = command["command"].(string)
 
-		methods := []string{"click", "type"}
-		if slices.Contains(methods, oper.Action) {
+		doubleMethods := []string{"click", "type"}
+		if slices.Contains(doubleMethods, oper.Action) {
 			content := strings.Split(command["target"].(string), "=")
 			oper.Target = content[0]
 			oper.Tag = content[1]
+			oper.Value = command["value"].(string)
+
+			// fmt.Println(oper)
+			results = append(results, oper)
+		}
+
+		singleMethods := []string{"open"}
+		if slices.Contains(singleMethods, oper.Action) {
+			oper.Target = command["target"].(string)
 			oper.Value = command["value"].(string)
 
 			// fmt.Println(oper)

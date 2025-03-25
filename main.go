@@ -10,7 +10,7 @@ var (
 )
 
 func main() {
-	flag.StringVar(&start_point, "url", "", "start URL")
+	flag.StringVar(&start_point, "url", "https://banner.centennialcollege.ca", "start URL")
 	flag.Parse()
 	libs.Main(start_point)
 }

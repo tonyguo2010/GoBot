@@ -1,0 +1,109 @@
+{
+  "id": "8680dd21-ec46-4907-996e-29c5c38d11c3",
+  "version": "2.0",
+  "name": "SelfService",
+  "url": "https://banner.centennialcollege.ca",
+  "tests": [{
+    "id": "0b4c6ce5-0920-489d-8ce5-34e307dd227d",
+    "name": "sample",
+    "commands": [{
+      "id": "aa63002b-6f61-4cc3-a91f-ae4400a42560",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d26346b5-b4f8-4ee3-a436-4b400ffa7583",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(2) b",
+      "targets": [
+        ["css=li:nth-child(2) b", "css:finder"],
+        ["xpath=//div[@id='mm-0']/header/div[3]/div/nav/div/div/ul/li[2]/a/b", "xpath:idRelative"],
+        ["xpath=//li[2]/a/b", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "78da7b3d-7c6e-48e4-a242-0f71c293da0a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.auto-style2 > a:nth-child(21)",
+      "targets": [
+        ["css=.auto-style2 > a:nth-child(21)", "css:finder"],
+        ["xpath=(//a[contains(text(),'Banner 8 SSB (SSO)')])[12]", "xpath:link"],
+        ["xpath=//section[@id='first-section']/article/p[7]/span[2]/a[11]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://tprdn.centennialcollege.ca/ssomanager/saml/login?relayState=/c/auth/SSB')]", "xpath:href"],
+        ["xpath=//span[2]/a[11]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ed8d7194-1e28-4f8b-8306-74b256f59af8",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Forgot Password?",
+      "targets": [
+        ["linkText=Forgot Password?", "linkText"],
+        ["css=a", "css:finder"],
+        ["xpath=//a[contains(text(),'Forgot Password?')]", "xpath:link"],
+        ["xpath=//form[@id='loginForm']/div[4]/div[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://secure.centennialcollege.ca/mypassword')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Forgot Password?')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "66f502b7-5c70-4713-ab76-67ce65f626dc",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Skip Navigation",
+      "targets": [
+        ["linkText=Skip Navigation", "linkText"],
+        ["css=li:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Skip Navigation')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '#skip-navigation')]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Skip Navigation')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1f80e6e1-a78b-4235-b8a8-39c9944a6df1",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Contact Us",
+      "targets": [
+        ["linkText=Contact Us", "linkText"],
+        ["css=li:nth-child(5) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Contact Us')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'https://www.centennialcollege.ca/about-centennial/contact-us/')]", "xpath:href"],
+        ["xpath=//li[5]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Contact Us')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "33ab3851-c038-461d-8c90-3c6211b28c21",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=About",
+      "targets": [
+        ["linkText=About", "linkText"],
+        ["css=.fufjdd", "css:finder"],
+        ["xpath=(//a[contains(text(),'About')])[2]", "xpath:link"],
+        ["xpath=//div[@id='cent-root']/div/div/span/header/section[2]/div/nav/ul/li[7]/span/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/about-centennial/')])[3]", "xpath:href"],
+        ["xpath=//li[7]/span/a", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "fbd461c5-1d4a-41f7-93f4-735e422810f9",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["0b4c6ce5-0920-489d-8ce5-34e307dd227d"]
+  }],
+  "urls": ["https://banner.centennialcollege.ca/"],
+  "plugins": []
+}
