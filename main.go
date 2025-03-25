@@ -1,12 +1,16 @@
 package main
 
 import (
-	"fmt"
+	"flag"
 	"libs"
 )
 
-func main() {
-	libs.Init()
+var (
+	start_point string
+)
 
-	fmt.Println("OK")
+func main() {
+	flag.StringVar(&start_point, "url", "", "start URL")
+	flag.Parse()
+	libs.Main(start_point)
 }
