@@ -1,151 +1,126 @@
 {
-  "id": "8680dd21-ec46-4907-996e-29c5c38d11c3",
+  "id": "c70facdc-2fba-45a6-a34c-afa7e7553ede",
   "version": "2.0",
-  "name": "SelfService",
-  "url": "https://banner.centennialcollege.ca",
+  "name": "sample",
+  "url": "https://docs.berachain.com",
   "tests": [{
-    "id": "0b4c6ce5-0920-489d-8ce5-34e307dd227d",
+    "id": "2acdf3d0-94bd-4e08-b001-8a3c71b4831e",
     "name": "sample",
     "commands": [{
-      "id": "aa63002b-6f61-4cc3-a91f-ae4400a42560",
+      "id": "c475c142-250c-41d0-99b3-d8d57b3007f4",
       "comment": "",
       "command": "open",
-      "target": "/",
+      "target": "/developers/",
       "targets": [],
       "value": ""
     }, {
-      "id": "d26346b5-b4f8-4ee3-a436-4b400ffa7583",
+      "id": "bc4aa367-666a-4528-b0a9-33b8400bab22",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1537x1017",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "39c1d010-2aba-4c0e-abbe-cff9cf084de7",
       "comment": "",
       "command": "click",
-      "target": "css=li:nth-child(2) b",
+      "target": "css=.VPLink:nth-child(4) > span",
       "targets": [
-        ["css=li:nth-child(2) b", "css:finder"],
-        ["xpath=//div[@id='mm-0']/header/div[3]/div/nav/div/div/ul/li[2]/a/b", "xpath:idRelative"],
-        ["xpath=//li[2]/a/b", "xpath:position"]
+        ["css=.VPLink:nth-child(4) > span", "css:finder"],
+        ["xpath=//div[@id='app']/div/header/div/div/div[2]/div[2]/nav/a[2]/span", "xpath:idRelative"],
+        ["xpath=//a[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Developers')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "78da7b3d-7c6e-48e4-a242-0f71c293da0a",
+      "id": "0bbec8ee-5a76-447f-a503-99aefb885c5e",
       "comment": "",
       "command": "click",
-      "target": "css=.auto-style2 > a:nth-child(21)",
+      "target": "css=.DocSearch",
       "targets": [
-        ["css=.auto-style2 > a:nth-child(21)", "css:finder"],
-        ["xpath=(//a[contains(text(),'Banner 8 SSB (SSO)')])[12]", "xpath:link"],
-        ["xpath=//section[@id='first-section']/article/p[7]/span[2]/a[11]", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, 'https://tprdn.centennialcollege.ca/ssomanager/saml/login?relayState=/c/auth/SSB')]", "xpath:href"],
-        ["xpath=//span[2]/a[11]", "xpath:position"]
+        ["css=.DocSearch", "css:finder"],
+        ["xpath=(//button[@type='button'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='local-search']/button", "xpath:idRelative"],
+        ["xpath=//div/div/button", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "ed8d7194-1e28-4f8b-8306-74b256f59af8",
+      "id": "732e10ca-f149-469b-9611-ce4247ed7692",
       "comment": "",
-      "command": "click",
-      "target": "linkText=Forgot Password?",
-      "targets": [
-        ["linkText=Forgot Password?", "linkText"],
-        ["css=a", "css:finder"],
-        ["xpath=//a[contains(text(),'Forgot Password?')]", "xpath:link"],
-        ["xpath=//form[@id='loginForm']/div[4]/div[2]/a", "xpath:idRelative"],
-        ["xpath=//a[contains(@href, 'https://secure.centennialcollege.ca/mypassword')]", "xpath:href"],
-        ["xpath=//a", "xpath:position"],
-        ["xpath=//a[contains(.,'Forgot Password?')]", "xpath:innerText"]
-      ],
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
       "value": ""
     }, {
-      "id": "66f502b7-5c70-4713-ab76-67ce65f626dc",
+      "id": "4ff3d74b-3183-4a7a-93db-5652610e4b7a",
       "comment": "",
-      "command": "click",
-      "target": "linkText=Skip Navigation",
-      "targets": [
-        ["linkText=Skip Navigation", "linkText"],
-        ["css=li:nth-child(1) > a", "css:finder"],
-        ["xpath=//a[contains(text(),'Skip Navigation')]", "xpath:link"],
-        ["xpath=//a[contains(@href, '#skip-navigation')]", "xpath:href"],
-        ["xpath=//li/a", "xpath:position"],
-        ["xpath=//a[contains(.,'Skip Navigation')]", "xpath:innerText"]
-      ],
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
       "value": ""
     }, {
-      "id": "1f80e6e1-a78b-4235-b8a8-39c9944a6df1",
+      "id": "399f79ef-9218-4e84-8ebd-7de920df1003",
       "comment": "",
-      "command": "click",
-      "target": "linkText=Contact Us",
-      "targets": [
-        ["linkText=Contact Us", "linkText"],
-        ["css=li:nth-child(5) > a", "css:finder"],
-        ["xpath=//a[contains(text(),'Contact Us')]", "xpath:link"],
-        ["xpath=//a[contains(@href, 'https://www.centennialcollege.ca/about-centennial/contact-us/')]", "xpath:href"],
-        ["xpath=//li[5]/a", "xpath:position"],
-        ["xpath=//a[contains(.,'Contact Us')]", "xpath:innerText"]
-      ],
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
       "value": ""
     }, {
-      "id": "33ab3851-c038-461d-8c90-3c6211b28c21",
-      "comment": "",
-      "command": "click",
-      "target": "linkText=About",
-      "targets": [
-        ["linkText=About", "linkText"],
-        ["css=.fufjdd", "css:finder"],
-        ["xpath=(//a[contains(text(),'About')])[2]", "xpath:link"],
-        ["xpath=//div[@id='cent-root']/div/div/span/header/section[2]/div/nav/ul/li[7]/span/a", "xpath:idRelative"],
-        ["xpath=(//a[contains(@href, '/about-centennial/')])[3]", "xpath:href"],
-        ["xpath=//li[7]/span/a", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "30be607f-d745-484f-a619-3ef50f45545a",
-      "comment": "",
-      "command": "click",
-      "target": "id=searchTextBox",
-      "targets": [
-        ["id=searchTextBox", "id"],
-        ["name=searchTextBox", "name"],
-        ["css=#searchTextBox", "css:finder"],
-        ["xpath=//input[@id='searchTextBox']", "xpath:attributes"],
-        ["xpath=//div[@id='cent-root']/div/div/span/header/section/div/div[2]/form/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "0fe88818-80fb-4495-9cb6-ce72bcbabbb9",
+      "id": "e0964d73-04c5-43cf-9862-54d9c1b7093b",
       "comment": "",
       "command": "type",
-      "target": "id=searchTextBox",
+      "target": "id=localsearch-input",
       "targets": [
-        ["id=searchTextBox", "id"],
-        ["name=searchTextBox", "name"],
-        ["css=#searchTextBox", "css:finder"],
-        ["xpath=//input[@id='searchTextBox']", "xpath:attributes"],
-        ["xpath=//div[@id='cent-root']/div/div/span/header/section/div/div[2]/form/input", "xpath:idRelative"],
+        ["id=localsearch-input", "id"],
+        ["css=#localsearch-input", "css:finder"],
+        ["xpath=//input[@id='localsearch-input']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "abc"
+      "value": "Quickstart"
     }, {
-      "id": "620fb43b-3f20-436c-ad61-a38925e886ec",
+      "id": "e5957795-3268-4f43-9dba-5173debf45ca",
       "comment": "",
       "command": "sendKeys",
-      "target": "id=searchTextBox",
+      "target": "id=localsearch-input",
       "targets": [
-        ["id=searchTextBox", "id"],
-        ["name=searchTextBox", "name"],
-        ["css=#searchTextBox", "css:finder"],
-        ["xpath=//input[@id='searchTextBox']", "xpath:attributes"],
-        ["xpath=//div[@id='cent-root']/div/div/span/header/section/div/div[2]/form/input", "xpath:idRelative"],
+        ["id=localsearch-input", "id"],
+        ["css=#localsearch-input", "css:finder"],
+        ["xpath=//input[@id='localsearch-input']", "xpath:attributes"],
         ["xpath=//input", "xpath:position"]
       ],
       "value": "${KEY_ENTER}"
+    }, {
+      "id": "6890e712-275d-4206-b344-cff5e8d904fc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.selected .excerpt-wrapper",
+      "targets": [
+        ["css=.selected .excerpt-wrapper", "css:finder"],
+        ["xpath=//ul[@id='localsearch-list']/li/a/div/div[2]", "xpath:idRelative"],
+        ["xpath=//a/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3f82cf62-6407-4255-9782-b8902ce8f338",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.selected .excerpt-wrapper",
+      "targets": [
+        ["css=.selected .excerpt-wrapper", "css:finder"],
+        ["xpath=//ul[@id='localsearch-list']/li/a/div/div[2]", "xpath:idRelative"],
+        ["xpath=//a/div/div[2]", "xpath:position"]
+      ],
+      "value": ""
     }]
   }],
   "suites": [{
-    "id": "fbd461c5-1d4a-41f7-93f4-735e422810f9",
+    "id": "26ea8c64-341a-4161-aec8-a4352f6eab0a",
     "name": "Default Suite",
     "persistSession": false,
     "parallel": false,
     "timeout": 300,
-    "tests": ["0b4c6ce5-0920-489d-8ce5-34e307dd227d"]
+    "tests": ["2acdf3d0-94bd-4e08-b001-8a3c71b4831e"]
   }],
-  "urls": ["https://banner.centennialcollege.ca/"],
+  "urls": ["https://docs.berachain.com/"],
   "plugins": []
 }

@@ -6,11 +6,12 @@ import (
 )
 
 var (
-	start_point string
+	script_name string
 )
 
 func main() {
-	flag.StringVar(&start_point, "url", "https://banner.centennialcollege.ca", "start URL")
+	flag.StringVar(&script_name, "script", "sample.json", "The script to execute")
 	flag.Parse()
-	libs.Main(start_point)
+	libs.Script_path = script_name
+	libs.Main()
 }

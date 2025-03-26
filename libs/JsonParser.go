@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-func LoadOperations(json_file string) []Operation {
+func LoadOperations(json_file string) (string, []Operation) {
 	var results []Operation
 	// Open our jsonFile
 	jsonFile, err := os.Open(json_file)
@@ -25,6 +25,7 @@ func LoadOperations(json_file string) []Operation {
 	var result map[string]interface{}
 	json.Unmarshal([]byte(byteValue), &result)
 
+	url := result["url"].(string)
 	var root = result["tests"].([]any)[0].(map[string]interface{})
 	var commands = root["commands"].([]any)
 
@@ -55,7 +56,7 @@ func LoadOperations(json_file string) []Operation {
 		}
 	}
 
-	return results
+	return url, results
 }
 
 func LoadJsonFromFile(filename string) map[string]int {
