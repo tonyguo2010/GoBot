@@ -1,0 +1,9 @@
+{
+  "main_loop": 3,
+  "pre_input": 1,
+  "after_input": 0.5,
+  "after_click" : 2,
+  "after_select" : 0.5,
+  "pre_typing" : 1.5,
+  "after_typing" : 1.5
+}

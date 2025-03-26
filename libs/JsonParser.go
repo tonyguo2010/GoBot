@@ -34,7 +34,7 @@ func LoadOperations(json_file string) []Operation {
 		var oper Operation
 		oper.Action = command["command"].(string)
 
-		doubleMethods := []string{"click", "type"}
+		doubleMethods := []string{"click", "type", "sendKeys"}
 		if slices.Contains(doubleMethods, oper.Action) {
 			content := strings.Split(command["target"].(string), "=")
 			oper.Target = content[0]
@@ -56,4 +56,20 @@ func LoadOperations(json_file string) []Operation {
 	}
 
 	return results
+}
+
+func LoadJsonFromFile(filename string) map[string]int {
+	jsonFile, err := os.Open(filename)
+	// if we os.Open returns an error then handle it
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	defer jsonFile.Close()
+
+	byteValue, _ := ioutil.ReadAll(jsonFile)
+
+	var result map[string]int
+	json.Unmarshal([]byte(byteValue), &result)
+	return result
 }

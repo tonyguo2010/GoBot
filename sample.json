@@ -94,6 +94,48 @@
         ["xpath=//li[7]/span/a", "xpath:position"]
       ],
       "value": ""
+    }, {
+      "id": "30be607f-d745-484f-a619-3ef50f45545a",
+      "comment": "",
+      "command": "click",
+      "target": "id=searchTextBox",
+      "targets": [
+        ["id=searchTextBox", "id"],
+        ["name=searchTextBox", "name"],
+        ["css=#searchTextBox", "css:finder"],
+        ["xpath=//input[@id='searchTextBox']", "xpath:attributes"],
+        ["xpath=//div[@id='cent-root']/div/div/span/header/section/div/div[2]/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0fe88818-80fb-4495-9cb6-ce72bcbabbb9",
+      "comment": "",
+      "command": "type",
+      "target": "id=searchTextBox",
+      "targets": [
+        ["id=searchTextBox", "id"],
+        ["name=searchTextBox", "name"],
+        ["css=#searchTextBox", "css:finder"],
+        ["xpath=//input[@id='searchTextBox']", "xpath:attributes"],
+        ["xpath=//div[@id='cent-root']/div/div/span/header/section/div/div[2]/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "abc"
+    }, {
+      "id": "620fb43b-3f20-436c-ad61-a38925e886ec",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=searchTextBox",
+      "targets": [
+        ["id=searchTextBox", "id"],
+        ["name=searchTextBox", "name"],
+        ["css=#searchTextBox", "css:finder"],
+        ["xpath=//input[@id='searchTextBox']", "xpath:attributes"],
+        ["xpath=//div[@id='cent-root']/div/div/span/header/section/div/div[2]/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
     }]
   }],
   "suites": [{

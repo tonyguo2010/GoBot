@@ -8,8 +8,10 @@ import (
 	"github.com/tebeka/selenium"
 )
 
+var Timers map[string]int
+
 func Init() {
-	fmt.Println("For testing")
+	Timers = LoadJsonFromFile("timing.json")
 }
 
 func GetFormCode(driver selenium.WebDriver) int {
@@ -41,40 +43,45 @@ func process_operations(driver selenium.WebDriver, operations []Operation) {
 			} else if oper.Target == "linkText" {
 				click_by_link(driver, oper.Tag)
 			}
+		} else if oper.Action == "type" {
+			if oper.Target == "id" {
+				set_input_by_id(driver, oper.Tag, oper.Value)
+			}
+		} else if oper.Action == "sendKeys" {
+			if oper.Target == "id" {
+				set_key_by_id(driver, oper.Tag, oper.Value)
+			}
 		}
-
-		// if operation['command'] == 'type':
-		//     if cmds[0] == 'id':
-		//         if header is not None and header == cmds[1]:
-		//             set_input_by_id(driver, header, hijack_input)
-		//         else:
-		//             set_input_by_id(driver, cmds[1], operation['value'])
-
-		// elif cmds[0] == 'Glb':
-		//     times = 1
-		//     if 'times' in operation:
-		//         times = operation['times']
-		//     while times > 0:
-		//         global_key(driver, operation['value'])
-		//         times -= 1
-
-		// # elif cmds[0] == 'Cmb':
-		// elif cmds[0] == 'Output':
-		//     value = ''
-
-		//     if cmds[1] == 'Path':
-		//         value = get_input_by_xpath(driver, widgets[cmds[2]]['xpath'])
-		//     elif cmds[1] == 'ID':
-		//         value = get_input_by_id(driver, widgets[cmds[2]]['id'])
-
-		//     print(value)
-
-		// elif cmds[0] == 'Exit':
-		//     driver.close()
-		//     # sys.exit(0)
-
 	}
-	time.Sleep(20 * time.Second)
+	time.Sleep(time.Duration(Timers["main_loop"]) * time.Second)
+}
+
+func set_key_by_id(driver selenium.WebDriver, id, key string) {
+	defer func() {
+		if err := recover(); err != nil {
+			log.Println("panic occurred:", err)
+		}
+		time.Sleep(time.Duration(Timers["after_input"]) * time.Second)
+	}()
+
+	input, err := driver.FindElement(selenium.ByID, id)
+	if err == nil {
+		input.SendKeys(Vkeys[key])
+	}
+}
+
+func set_input_by_id(driver selenium.WebDriver, id, value string) {
+	defer func() {
+		if err := recover(); err != nil {
+			log.Println("panic occurred:", err)
+		}
+		time.Sleep(time.Duration(Timers["after_input"]) * time.Second)
+	}()
+
+	input, err := driver.FindElement(selenium.ByID, id)
+	if err == nil {
+		input.SendKeys(value)
+	}
 }
 
 func click_by_link(driver selenium.WebDriver, link string) {
@@ -82,7 +89,7 @@ func click_by_link(driver selenium.WebDriver, link string) {
 		if err := recover(); err != nil {
 			log.Println("panic occurred:", err)
 		}
-		time.Sleep(3 * time.Second)
+		time.Sleep(time.Duration(Timers["after_click"]) * time.Second)
 	}()
 
 	btn, err := driver.FindElement(selenium.ByLinkText, link)
@@ -96,7 +103,7 @@ func click_by_id(driver selenium.WebDriver, id string) {
 		if err := recover(); err != nil {
 			log.Println("panic occurred:", err)
 		}
-		time.Sleep(3 * time.Second)
+		time.Sleep(time.Duration(Timers["after_click"]) * time.Second)
 	}()
 
 	btn, err := driver.FindElement(selenium.ByID, id)
@@ -110,7 +117,7 @@ func click_by_css(driver selenium.WebDriver, css string) {
 		if err := recover(); err != nil {
 			log.Println("panic occurred:", err)
 		}
-		time.Sleep(3 * time.Second)
+		time.Sleep(time.Duration(Timers["after_click"]) * time.Second)
 	}()
 
 	btn, err := driver.FindElement(selenium.ByCSSSelector, css)

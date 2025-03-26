@@ -29,10 +29,11 @@ func Main(url string) {
 	if err != nil {
 		panic(err)
 	}
+	Init()
 	for {
 		state := GetBrowserState(driver)
 		if state == false {
-			time.Sleep(3 * time.Second)
+			time.Sleep(time.Duration(Timers["main_loop"]) * time.Second)
 			continue
 		}
 		form_code := GetFormCode(driver)
@@ -41,7 +42,8 @@ func Main(url string) {
 		} else if form_code == 1 {
 			NavigateTo(driver, base_url)
 		}
-		time.Sleep(3 * time.Second)
+
+		time.Sleep(time.Duration(Timers["main_loop"]) * time.Second)
 	}
 }
 

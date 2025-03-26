@@ -11,7 +11,9 @@ func main() {
 
 	// result := strings.SplitAfter(s, ",")
 	// fmt.Println("Result:", result[1])
-	operations := libs.LoadOperations("PCL.json")
+	js := libs.LoadJsonFromFile("timing.json")
+	fmt.Println(js)
 
-	fmt.Println(operations)
+	fmt.Println(js["main_loop"])
+	// fmt.Println(js["pre_input"])
 }
